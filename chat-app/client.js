@@ -1,6 +1,7 @@
 const net = require("node:net");
 const readline = require("readline/promises");
-const hostIP = "192.168.2.171";
+const hostIP = "51.20.44.251";
+const PORT = "6000";
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -23,7 +24,7 @@ const moveCursor = (dx, dy) => {
 };
 
 let id;
-const socket = net.createConnection({ host: hostIP, port: 6000 }, async () => {
+const socket = net.createConnection({ host: hostIP, port: PORT }, async () => {
   const ask = async () => {
     const message = await rl.question("Enter a message > ");
     await moveCursor(0, -1); // move the cursor one line up
