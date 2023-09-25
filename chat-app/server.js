@@ -1,5 +1,5 @@
 const net = require("node:net");
-const hostIP = "172.31.19.7";
+const hostIP = "::1";
 const PORT = "6000";
 const clients = []; // array of sockets
 const server = net.createServer();
@@ -41,6 +41,6 @@ server.on("close", () => {
   console.log("Server closed");
 });
 server.listen(PORT, hostIP, () => {
-  console.log(`TCP is listening on http://${hostIP} net. server`);
+  console.log(`TCP is listening on http://${hostIP}:${PORT} net. server`);
   console.log(server.address());
 });
